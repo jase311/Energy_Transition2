@@ -3,8 +3,6 @@ import numpy as np
 import streamlit as st
 import plotly_express as px
 import plotly.graph_objects as go
-import openpyxl
-
 
 
 # Set visualization options
@@ -14,11 +12,9 @@ pd.set_option('display.width', 32000)
 # Data for GDP from https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
 
 # Create the necessary dataframes: Production, Consumption and GDP
-df_consumption = pd.read_csv(r'https://github.com/jase311/Energy_Transition/blob/main/modern-renewable-energy-consumption.csv',on_bad_lines='skip')
-df_production = pd.read_csv(r'https://github.com/jase311/Energy_Transition/blob/main/modern-renewable-prod.csv',on_bad_lines='skip')
-df_gdp = pd.read_excel(r'https://github.com/jase311/Energy_Transition/blob/main/GDP%20year%20country.xlsx',engine="openpyxl")
-
-
+df_consumption = pd.read_csv(r'C:\Users\Jaime Andres Suarez\Desktop\Data Analysis Projects\World Energy\Renewable Energy Prod and Cons\modern-renewable-energy-consumption.csv')
+df_production = pd.read_csv(r'C:\Users\Jaime Andres Suarez\Desktop\Data Analysis Projects\World Energy\Renewable Energy Prod and Cons\modern-renewable-prod.csv')
+df_gdp = pd.read_excel(r'C:\Users\Jaime Andres Suarez\Desktop\Data Analysis Projects\World Energy\GDP year country.xlsx')
 
 # Drop the unnecessary columns by name
 df_gdp.drop(df_gdp.loc[:, '1960':'1999'].columns,axis=1, inplace=True)
